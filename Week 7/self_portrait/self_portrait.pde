@@ -313,7 +313,7 @@ void draw() {
   //***** end of Hair *****
   
   if (!saved) {
-    saveFrame("self portrait");
+    saveFrame("self portrait.png");
     saved = true;
   }
   
