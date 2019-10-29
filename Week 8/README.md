@@ -1,1 +1,0 @@
-Recreation of Kawano's black and white illustration with adjustable discreteness and color ratio.
