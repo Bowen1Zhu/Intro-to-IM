@@ -373,17 +373,17 @@ void game_over_page() {
   if (lives == 0) {  //when game_over_page() is called for the 1st time: draw the game over page and prepare to call delay() in the next draw() iteration
     lives --;        //distinguish the 2nd time from the 1st time
     //draw the game over page
-    image(sad_dog, 200, 200, 180, 240);
-    image(bone, 220, 85, 100, 100);
+    image(sad_dog, 200, 250, 180, 240);
+    image(bone, 210, 100, 100, 100);
     textSize(40);
     if (total_bones < 10) {
-      text(total_bones, 347, 150);
+      text(total_bones, 337, 165);
     } else {
-      text(total_bones, 335, 150);
+      text(total_bones, 325, 165);
     }
     noFill();
     stroke(255, 205, 215);
-    rect(320, 85, 80, 100);
+    rect(310, 100, 80, 100);
     stroke(0);
   } else {           //when game_over_page() is called for the 2nd time: delay for 5 seconds and reset variables
     lives = 3;
