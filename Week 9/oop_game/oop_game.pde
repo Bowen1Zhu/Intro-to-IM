@@ -225,6 +225,7 @@ void draw() {
     delay(1000);
   }
   if (start) {
+    //3-second countdown before game starts
     if (countdown >= 0) {
       if (countdown == 3) {
         initialize();             //reinitialize after each life is lost
