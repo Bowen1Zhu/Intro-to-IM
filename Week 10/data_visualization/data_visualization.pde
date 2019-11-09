@@ -40,7 +40,6 @@ class Country {
   int xpos, ypos;                         //position of the country
   int alpha = 100;                        //transparency of the circle
   float diameter, current_diameter = 0;   //diameter of the circle
-  boolean stable;                         //whether the diameter is still changing
   //Country() {}
 
   void draw_circle() {
@@ -66,8 +65,8 @@ class Country {
       diameter = map(pow(im, 0.65), pow(min_im, 0.65), pow(max_im, 0.65), 10, 100);
       fill(255, 0, 0, alpha);
     }
+    boolean stable = true;                //whether the diameter is still changing
     //if current diameter no longer changes, then stable is true, and make sure current diameter is exactly the value that we calculated above
-    stable = true;
     if (current_diameter < diameter) {
       current_diameter += 5;
       stable = !stable;
@@ -206,10 +205,10 @@ void setup() {
 
 void draw() {
   background(255);
-  if (zoom_in || zoom > 1.01) {                       //if zoomed-in,  or if zoomed-out but hasn't fully restored the position
+  if (zoom_in || zoom > 1.01) {                       //if zoomed-in, or if zoomed-out but hasn't fully restored the position
     mouse_x = mouseX;                                 //we need to keep track of the equivalent position of the mouse in the original coordinate system without zooming in
     mouse_y = mouseY;
-    //constrain the center of the canvas so that the user cannot drag beyond the scope of the map
+    //constrain the center of translation so that the user cannot drag beyond the scope of the map
     if (left_edge) {
       center_x = 0;
     } else if (right_edge) {
@@ -483,7 +482,7 @@ void mousePressed() {
 }
 
 void mouseReleased() {
-  //if the user stops dragging, update the new center and clear the distance shifted
+  //when the user stops dragging, update the new center position and clear the distance shifted
   if (!left_edge && !right_edge) {
     center_x -= shift_x;
     shift_x = 0;
