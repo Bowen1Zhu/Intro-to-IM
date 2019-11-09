@@ -1,1 +1,1 @@
-Visualization of UAE's Trade Partners in Asia
+Map visualization of UAE's trade partners in Asia.
