@@ -6,6 +6,6 @@ Avoid wolves on your way.
 
 You get three lives. Accumulate as many bones as you can.
 
-Control: ↑
+Control:↑
 
-   press  ←↓→ buttons to move; click or press all buttons to start/pause/resume.
+   press ←↓→ buttons to move; click or press all buttons to start/pause/resume.
