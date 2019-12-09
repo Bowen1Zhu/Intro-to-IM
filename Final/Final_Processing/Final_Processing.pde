@@ -462,7 +462,7 @@ void setup() {
   }
   
   myPort = new Serial(this, Serial.list()[0], 9600);
-  myPort.bufferUntil('\n');  //don't generate a serialEvent() unless you get a newline character:
+  myPort.bufferUntil('\n');  //don't generate a serialEvent() until a newline character
 }
 
 void draw() {
