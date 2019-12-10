@@ -77,16 +77,17 @@ class myCar {
     //    } else {
     //      direction -= 3;
     //    }
-    //    direction = constrain(direction, -75, 75);
+    //    direction = constrain(direction, -60, 60);
     //  } else if (keyCode == RIGHT) {
     //    if (direction >= -2) {
     //      direction ++;
     //    } else {
     //      direction += 3;
     //    }
-    //    direction = constrain(direction, -75, 75);
+    //    direction = constrain(direction, -60, 60);
     //  } else if (keyCode == UP) {
-    //    a += 0.01;
+    //    a += 0.005;
+    //    a = constrain(a, 0, 0.2);
     //  } else if (keyCode == DOWN) {
     //    a -= 0.03;
     //  }
@@ -874,7 +875,7 @@ void update_show_scoreboard(int score) {
     noFill();
     rect(182, 92, 416, 425, 25);
   }
-  //backround of each score
+  //background of each score
   strokeWeight(45);
   for (int i = 225; i <= 465; i += 60) {
     line(240, i, 540, i);
