@@ -5,11 +5,11 @@ The pedals (right) are connected to the steering wheel; the steering wheel (midd
 
 ![](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/overall%20picture.jpg)
 ### List of important parts
-Pedals, steering wheel, Arduino, and laptop.
+Pedals, steering wheel, Arduino board, and laptop.
 ### System diagram
 ![](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/system%20diagram.jpg)
 ### Picture inside the steering wheel
-The wires from the pedals are connected to the steering wheel, so I only need to solder wires in the steering wheel.
+The wires from the pedals are connected to the steering wheel, so I only need to solder wires inside the steering wheel.
 
 ![](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/steering%20wheel.jpg)
 ### Code
@@ -25,7 +25,7 @@ Overall, the game was produced smoothly enough, but I realized that the player m
 ### Feedback I received during user testing and what changes I made
 I did lots of user testing and most people said the game is more exciting than they expected (one of my friend even broke my steering wheel during a game). Through the feedback from many users, I was able to adjust the sensitivity of the device as some felt that the steering wheel was too sensitive while some told me the pedals were too sensitive as well.
 
-Another change I made is to add friction to the drive which will reduce the speed slowly if the player does not push the gas—previously, I didn't think of friction so the speed of the car was fixed if the player doesn't control the pedals (like an automatic cruise control). I totally agree with it when my first player raised this suggestion, as it looks more real, and it also prompts the player to control the speed constantly. I also set the friction to be proportional to the speed so that it feels more natural.
+Another change I made is to add friction to the drive which will reduce the speed slowly if the player does not push the gas—previously, I didn't think of friction so the speed of the car was fixed if the player doesn't control the pedals (like an automatic cruise control). I totally agree with it when my first player raised this suggestion, as she said it looks more real, and it also prompts the player to control the speed constantly. I also set the friction to be proportional to the speed so that it feels more natural.
 
 One of the players likes to drift the car—driving at a relatively slow speed but with sharp turns. He made me realize that I should also constrain the range of the direction as the speed of the cars is dependent on the direction (otherwise the speed might become negative in extreme situations).
 
