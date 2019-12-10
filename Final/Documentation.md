@@ -1,14 +1,16 @@
 ### Overall project concept and description
-I created a driving game in which the player selects a car on the screen and controls the car using physical steering wheel and pedals. The player can collect elements such as gas, coins, and extra lives in the game and meanwhile should avoid bumping into another car, hit the curb, or running out of gas in order to keep the game going. After the game, his/her score is calculated and a scoreboard is presented. The player (or another player) can restart the game and keep playing.
+I created a driving game in which the player selects a car on the screen and controls the car using a physical steering wheel and pedals. The player can collect elements such as gas, coins, and extra lives in the game and meanwhile should avoid bumping into another car, hit the curb, or running out of gas in order to keep the game going. After the game, his/her score is calculated and a scoreboard is presented. The player (or another player) can restart the game and keep playing.
 ### Overall picture
-The pedals (right) are connected to the steering wheel; the steering wheel (middle) is connected to Arduino; Arduino (left) is connected to the laptop.
+The pedals (right) are connected to the steering wheel; the steering wheel (middle) is connected to the Arduino; the Arduino (left) is connected to the laptop.
 
 ![](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/overall%20picture.jpg)
 ### List of important parts
 Pedals, steering wheel, Arduino, and laptop.
 ### System diagram
 ![](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/system%20diagram.jpg)
-### Pictures of the steering wheel
+### Picture inside the steering wheel
+The wires from the pedals are connected to the steering wheel, so I only need to solder wires in the steering wheel.
+
 ![](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/steering%20wheel.jpg)
 ### Code
 [Processing](Final_Processing/Final_Processing.pde)
@@ -16,11 +18,12 @@ Pedals, steering wheel, Arduino, and laptop.
 [Arduino](Final_Arduino/Final_Arduino.ino)
 ### How my project works and how I built it
 For the hardware part, professor helped me cracked the steering wheel and the pedal to see how the wires are connected inside. Then, with professor's help, I cut those wires and soldered new wires to connect the potentiometer behind the steering wheel and the pedals to the Arduino board so that the change in their resistance can be measured.
-For the software part, the Arduino program uses analogRead() to read the data from the physical system and maps them and then sends them to the Processing program. The Processing program constantly reads the data and uses the data to move the car accordingly; meanwhile, it constantly updates all other elements (move positions, check collision, draw images, etc.) until the player loses the game. After that, the player's score and the scoreboard are shown and the Processing program detects any key press which can enter the player's name or restart the game.
+
+For the software part, the Arduino program uses analogRead() to read the data from the physical system and maps them and then sends them to the Processing program. The Processing program constantly reads the data from the serial port and uses the data to move the car accordingly; meanwhile, it constantly updates (moves positions, checks collision, draws images, etc.) all other elements (other cars, things to be collected, background, etc.) and figures (gas, speed, distance, money, etc.) until the player loses the game. After that, the player's score and the scoreboard are shown and the Processing program detects any key press which can enter the player's name or restart the game.
 ### Problems I ran into and how I resolved them
-Overall, the game was produced smoothly enough, but I realized that the player might not actually play the game in the way I had expected. For example, initially, because all other cars in the game are initialized in front of the player's car, if the player drives slowly enough, he/she could fall behind and thus avoid driving among the other cars. To urge the player to drive fast enough, I decided to add some backup cars which will appear behind the player if he/she is driving too slowly. Thus the player has to speed up so as to avoid being bumped by them. It turned out that it's more sophisticated to implement than I thought, because these cars can't go faster than other cars otherwise they will bump into each other (which is also why I can't assign each car a different speed when a test driver suggested so); to prevent these cars from falling behind, they also need to be deactivated once the player reaches a certain speed and reactivated behind the player when he/she slows down again.
+Overall, the game was produced smoothly enough, but I realized that the player might not actually play the game in the way I had expected. For example, initially, because all other cars in the game were initialized in front of the player's car (above the screen), if the player drives slowly enough, he/she could fall behind and thus avoid driving among the other cars. To urge the player to drive fast enough, I decided to add some backup cars which will appear behind the player if he/she is driving too slowly. Thus the player has to speed up so as to avoid being bumped by them. It turned out that it's more sophisticated to implement than I thought, because these cars can't go faster than other cars otherwise they will bump into each other (which is also why I can't assign each car a different speed when a test driver suggested so); to prevent these cars from falling behind, they also need to be deactivated once the player reaches a certain speed and reactivated behind the player when he/she slows down again.
 ### Feedback I received during user testing and what changes I made
-I did lots of user testing and most people said the game is more exciting than they expected (one of my friend even broke my steering wheel during a game). Through the feedback from many users, I was able to adjust the sensitivity of the device as some felt that the steering wheel was too sensitive while some told me the pedals were too sensitive.
+I did lots of user testing and most people said the game is more exciting than they expected (one of my friend even broke my steering wheel during a game). Through the feedback from many users, I was able to adjust the sensitivity of the device as some felt that the steering wheel was too sensitive while some told me the pedals were too sensitive as well.
 
 Another change I made is to add friction to the drive which will reduce the speed slowly if the player does not push the gas—previously, I didn't think of friction so the speed of the car was fixed if the player doesn't control the pedals (like an automatic cruise control). I totally agree with it when my first player raised this suggestion, as it looks more real, and it also prompts the player to control the speed constantly. I also set the friction to be proportional to the speed so that it feels more natural.
 
