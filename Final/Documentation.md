@@ -4,6 +4,14 @@ I created a driving game in which the player selects a car on the screen and con
 The pedals (right) are connected to the steering wheel; the steering wheel (middle) is connected to the Arduino; the Arduino (left) is connected to the laptop.
 
 ![](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/overall%20picture.jpg)
+
+During the game:
+![during the game](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/game%20picture%201.png)
+
+After the game:
+![score](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/game%20picture%202.png)<br/>score
+
+![scoreboard](https://github.com/Bowen1Zhu/Intro-to-IM/blob/master/Final/Documentation_Pictures/game%20picture%203.png)<br/>scoreboard
 ### List of important parts
 Pedals, steering wheel, Arduino board, and laptop.
 ### System diagram
